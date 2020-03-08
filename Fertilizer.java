@@ -27,7 +27,6 @@ public class Fertilizer {
     }
 
     void spreadFertilizerOn(Soil soil) {
-        //TODO: setting soil's fertilizing level to match the fertilizer
         if (soil.nutrientLevel.getLevelValue() < nutrientLevel.getLevelValue()) {
             soil.nutrientLevel = nutrientLevel;
             return;
