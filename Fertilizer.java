@@ -9,6 +9,7 @@ public class Fertilizer {
 
     public static void main(String args[]) {
         Fertilizer fertilizer = new Fertilizer(NutrientLevel.citical);
+        // log: "A new fertilizer is created with the nutrient level of " + fertilizer.nutrientLevel.name()
         System.out.println(fertilizer.nutrientLevel.name());
     }
 
@@ -27,6 +28,7 @@ public class Fertilizer {
     }
 
     void spreadFertilizerOn(Soil soil) {
+        //log: "The nutrient level of <soil> is now <nutrientLevel>."
         if (soil.nutrientLevel.getLevelValue() < nutrientLevel.getLevelValue()) {
             soil.nutrientLevel = nutrientLevel;
             return;
