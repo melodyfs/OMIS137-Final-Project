@@ -2,6 +2,7 @@ public class Pesticide {
 
     PesticideType pesticideType;
     Bug bug;
+    private static Logging logger = Logging.getInstance();
 
     Pesticide(Bug bug) {
         this.bug = bug;
@@ -28,12 +29,12 @@ public class Pesticide {
                 pesticideType = PesticideType.rubbingAlcoholBugSpray;
         }
 
-       // log: "Pesticide of type " + pesticideType.name() + " was chosen"
+       logger.log("Pesticide of type " + pesticideType.name() + " was chosen");
     }
 
     void spreadPesticide() {
-        // log: "Spreading pesticide of type " + pesticideType.name() + "..."
-        // log: bug.name + " is killed."
+        logger.log("Spreading pesticide of type " + pesticideType.name() + "...");
+        logger.log(bug.name + " is killed.");
         bug = null;
     }
 }
