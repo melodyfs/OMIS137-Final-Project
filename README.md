@@ -40,4 +40,9 @@
 - Pesticide
 - Watering
 - Logging
-
+  - All the logs are recorded in `GardenLog.log`
+  - This helper class can be access through singleton for global usage: </br>
+    ```java
+    private static Logging logger = Logging.getInstance();
+    logger.log(<your logging message here>)
+    ```
