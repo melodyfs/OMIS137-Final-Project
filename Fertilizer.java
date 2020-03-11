@@ -24,9 +24,9 @@ public class Fertilizer {
     }
 
     void spreadFertilizerOn(Soil soil) {
-        logger.log("The nutrient level of current soil is now " + nutrientLevel.name());
         if (soil.nutrientLevel.getLevelValue() < nutrientLevel.getLevelValue()) {
             soil.nutrientLevel = nutrientLevel;
+            logger.log("The nutrient level of current soil is now " + nutrientLevel.name());
             return;
         }
 
