@@ -1,7 +1,7 @@
 # Computerized Garden
-
+Group members: Melody Yang, Connor Collins, Robert Mitchell
 ## Usage
-- Complile all the modules by running `javac *.java`
+- Compile all the modules by running `javac *.java`
 - Run the main program with `java Main`
 
 ## Documentations
