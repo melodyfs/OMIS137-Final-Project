@@ -39,6 +39,7 @@ Group members: Melody Yang, Connor Collins, Robert Mitchell
 - Fertilizer 
 - Pesticide
 - Watering
+  - The length and width give you the area of your garden 
 - Logging
   - All the logs are recorded in `GardenLog.log`
   - This helper class can be accessed through singleton for global usage: </br>
