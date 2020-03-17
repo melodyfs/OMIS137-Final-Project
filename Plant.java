@@ -1,24 +1,25 @@
 public class Plant {
     protected PlantType plantType;
-    protected double startingHeight; //these are all in feet
+    protected double Height; //these are all in feet //changed this from start height to height
     protected double maxHeight;
     protected double growthRate;
     protected String color;
 
     public Plant(PlantType t, double s, double m, double g, String c) {
         plantType=t;
-        startingHeight=s;
+        Height=s;
         maxHeight=m;
         growthRate=g;
         color=c;
     }
     PlantType getPlantType(){return plantType;}
-    double getStartingHeight() { return startingHeight; }
+    double getHeight() { return Height; }
     double getMaxHeight() { return maxHeight; }
     double getGrowthRate() { return growthRate; }
     String getColor() { return color; }
 
     void setGrowthRate(double g){growthRate=g;}
+    void setHeight(double h) {Height=h;}
 }
 class Rose extends Plant{
     Rose(){super(PlantType.rose,1, 5, 0.01, "red");}}

@@ -25,7 +25,7 @@ public class Pesticide {
             case ants: case whiteflies:
                 pesticideType = PesticideType.hotPepperBugRepellent;
                 break;
-            default:
+            default: //this therefore applies to mealyBugs and thrips
                 pesticideType = PesticideType.rubbingAlcoholBugSpray;
         }
 
