@@ -120,7 +120,7 @@ class GardenSimulation extends JFrame {
                 String[] values = {"Hot Pepper", "Insect Soap", "Rubbing Alcohol"};
 
                 Object selected = JOptionPane.showInputDialog(null, "Which pesticide do you want to use?", "Selection", JOptionPane.DEFAULT_OPTION, null, values, "0");
-                if ( selected != null) {//null if the user cancels. 
+                if ( selected != null) {
                     String selectedString = selected.toString();
                     switch (selectedString) {
                         case "Hot Pepper":
@@ -175,10 +175,6 @@ class GardenSimulation extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    private static void waterFlower(String num) {
-        System.out.println(num);
-    }
-
     private static void initPlants(JPanel panel) {
         var roseIcon = new ImageIcon("images/rose.png");
         var daisyIcon = new ImageIcon("images/daisy.png");
@@ -218,13 +214,13 @@ class GardenSimulation extends JFrame {
         }
     }
 
-    public static ImageIcon caterpillarIcon = new ImageIcon("images/caterpillar.png");
-    public static ImageIcon antIcon = new ImageIcon("images/ant.png");
-    public static ImageIcon aphidIcon = new ImageIcon("images/aphid.png");
-    public static ImageIcon mealyBugIcon = new ImageIcon("images/mealyBug.png");
-    public static ImageIcon miteIcon = new ImageIcon("images/mite.png");
-    public static ImageIcon thripIcon = new ImageIcon("images/thrip.png");
-    public static ImageIcon whiteflyIcon = new ImageIcon("images/whitefly.png");
+    private static ImageIcon caterpillarIcon = new ImageIcon("images/caterpillar.png");
+    private static ImageIcon antIcon = new ImageIcon("images/ant.png");
+    private static ImageIcon aphidIcon = new ImageIcon("images/aphid.png");
+    private static ImageIcon mealyBugIcon = new ImageIcon("images/mealyBug.png");
+    private static ImageIcon miteIcon = new ImageIcon("images/mite.png");
+    private static ImageIcon thripIcon = new ImageIcon("images/thrip.png");
+    private static ImageIcon whiteflyIcon = new ImageIcon("images/whitefly.png");
 
     private static void initBugs(JPanel panel) {
         for (int i = 0; i < garden.caterpillars.size(); i++) {
