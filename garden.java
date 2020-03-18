@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Garden {
+class Garden {
     private static Logging logger = Logging.getInstance();
 
     ArrayList<Caterpillar> caterpillars = new ArrayList(); //create caterpillar ArrayList
