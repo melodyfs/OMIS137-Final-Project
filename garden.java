@@ -449,44 +449,51 @@ public class Garden {
     public void growRoses(int numRoses){
         for (int i=0; i<numRoses; i++){
             Rose rose = (Rose) roses.get(i);
+            if (rose.getHeight<rose.getMaxHeight){
             rose.setHeight(rose.getHeight()+rose.getGrowthRate()); //add current height with growth rate
-        }
+        }}
     }
     public void growDaisies(int numDaisies){
         for (int i=0; i<numDaisies; i++){
             Daisy daisy = (Daisy) daisies.get(i);
+            if (daisy.getHeight<daisy.getMaxHeight){
             daisy.setHeight(daisy.getHeight()+daisy.getGrowthRate()); //add current height with growth rate
-        }
+        }}
     }
     public void growSunflowers(int numSunflowers){
         for (int i=0; i<numSunflowers; i++){
             Sunflower sunflower = (Sunflower) sunflowers.get(i);
+            if (sunflower.getHeight<sunflower.getMaxHeight){
             sunflower.setHeight(sunflower.getHeight()+sunflower.getGrowthRate()); //add current height with growth rate
-        }
+        }}
     }
     public void growTomatoes(int numTomatoes){
         for (int i=0; i<numTomatoes; i++){
             Tomato tomato = (Tomato) tomatoes.get(i);
+            if (tomato.getHeight<tomato.getMaxHeight){
             tomato.setHeight(tomato.getHeight()+tomato.getGrowthRate()); //add current height with growth rate
-        }
+        }}
     }
     public void growBasil(int numBasil){
         for (int i=0; i<numBasil; i++){
             Basil basil = (Basil) basilList.get(i);
+            if (basil.getHeight<basil.getMaxHeight){
             basil.setHeight(basil.getHeight()+basil.getGrowthRate()); //add current height with growth rate
-        }
+        }}
     }
     public void growCucumbers(int numCucumbers){
         for (int i=0; i<numCucumbers; i++){
             Cucumber cucumber = (Cucumber) cucumbers.get(i);
+            if (cucumber.getHeight<cucumber.getMaxHeight){
             cucumber.setHeight(cucumber.getHeight()+cucumber.getGrowthRate()); //add current height with growth rate
-        }
+        }}
     }
     public void growStrawberries(int numStrawberries){
         for (int i=0; i<numStrawberries; i++){
             Strawberry strawberry = (Strawberry) strawberries.get(i);
+            if (strawberry.getHeight<strawberry.getMaxHeight){
             strawberry.setHeight(strawberry.getHeight()+strawberry.getGrowthRate()); //add current height with growth rate
-        }
+        }}
     }
 
     static int dayNum = 0;
