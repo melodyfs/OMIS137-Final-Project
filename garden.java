@@ -2,9 +2,9 @@ import java.lang.reflect.Array;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.concurrent.ThreadLocalRandom;
 
-public class garden {
+public class Garden {
 
     ArrayList<Caterpillar> caterpillars = new ArrayList(); //create caterpillar ArrayList
     ArrayList<Ants> ants = new ArrayList();
@@ -103,19 +103,33 @@ public class garden {
 
     public void masterBugsEating(){ //find number of bug, pass it to each eating function which affects plant's growth
         int numCaterpillars = caterpillars.size();
-        caterpillarsEating(numCaterpillars);
+        if (numCaterpillars > 0) {
+            caterpillarsEating(numCaterpillars);
+        }
         int numAphids = aphids.size();
-        aphidsEating(numAphids);
+        if (numAphids > 0) {
+            aphidsEating(numAphids);
+        }
         int numMites = mites.size();
-        mitesEating(numMites);
+        if (numMites > 0) {
+            mitesEating(numMites);
+        }
         int numWhiteflies = whiteflies.size();
-        whitefliesEating(numWhiteflies);
+        if (numWhiteflies > 0) {
+            whitefliesEating(numWhiteflies);
+        }
         int numMealyBugs = mealyBugs.size();
-        mealyBugsEating(numMealyBugs);
+        if (numMealyBugs > 0) {
+            mealyBugsEating(numMealyBugs);
+        }
         int numThrips = thrips.size();
-        thripsEating(numThrips);
+        if (numThrips > 0) {
+            thripsEating(numThrips);
+        }
         int numAnts = ants.size();
-        antsEating(numAnts);
+        if (numAnts > 0) {
+            antsEating(numAnts);
+        }
     }
     
     public void masterPesttoPlant(boolean hotPepperUsed, boolean insectSoapUsed, boolean rubAlcUsed){
@@ -146,6 +160,7 @@ public class garden {
     }
 
     public void masterBugKiller(boolean hotPepperUsed, boolean insectSoapUsed, boolean rubAlcUsed){
+
         killCaterpillars(insectSoapUsed);
         killAphids( insectSoapUsed);
         killMites(insectSoapUsed);
@@ -156,9 +171,7 @@ public class garden {
     }
     
     public int randomNum(){ //random number generator of 1-7, used in making random bugs and plannts
-        int[] randomArray = new int[] {1,2,3,4,5,6,7};
-        Collections.shuffle(Arrays.asList(randomArray));
-        int randomNum=randomArray[0];
+        int randomNum = ThreadLocalRandom.current().nextInt(1, 7);
         return randomNum;
     }
 
@@ -172,9 +185,8 @@ public class garden {
                 caterpillars.remove(i);
             }
         }
-
-
     }
+
     public void killAphids(boolean insectSoapUsed){
         if (insectSoapUsed){
             int halfAphids=aphids.size()/2;
@@ -216,7 +228,7 @@ public class garden {
     }
     public void killAnts(boolean hotPepperUsed){
         if (hotPepperUsed){
-            int halfAnts=ants.size();
+            int halfAnts=ants.size()/2;
             for (int i=0; i<halfAnts; i++){
                 ants.remove(i);
             }
@@ -227,6 +239,9 @@ public class garden {
     //Bugs eating plants - if I do pesticides first and set those to original don't need to change growth rates
     public void caterpillarsEating(int numCaterpillars){ //need to fix growth rate to start at base level
         int numBasil = basilList.size();
+        if (numBasil == 0) {
+            return;
+        }
         for (int i = 0; i<numBasil; i++){
             Basil basil = (Basil) basilList.get(i);
             basil.setGrowthRate(basil.getGrowthRate()-(numCaterpillars*caterpillars.get(0).getDestructionRate())); 
@@ -234,6 +249,9 @@ public class garden {
     }
     public void aphidsEating(int numAphids){
         int numStraw = strawberries.size();
+        if (numStraw == 0) {
+            return;
+        }
         for (int i = 0; i<numStraw; i++){
             Strawberry strawberry = (Strawberry) strawberries.get(i);
             strawberry.setGrowthRate(strawberry.getGrowthRate()-(numAphids*aphids.get(0).getDestructionRate()));
@@ -241,6 +259,9 @@ public class garden {
     }
     public void mitesEating(int numMites){
         int numSunflowers = sunflowers.size();
+        if (numSunflowers == 0) {
+            return;
+        }
         for (int i = 0; i<numSunflowers; i++){
             Sunflower sunflower = (Sunflower) sunflowers.get(i);
             sunflower.setGrowthRate(sunflower.getGrowthRate()-(numMites*mites.get(0).getDestructionRate()));
@@ -248,6 +269,9 @@ public class garden {
     }
     public void whitefliesEating(int numWhiteflies){
         int numDaisies = daisies.size();
+        if (numDaisies == 0) {
+            return;
+        }
         for (int i = 0; i<numDaisies; i++){
             Daisy daisy = (Daisy) daisies.get(i);
             daisy.setGrowthRate(daisy.getGrowthRate()-(numWhiteflies*whiteflies.get(0).getDestructionRate()));
@@ -255,6 +279,9 @@ public class garden {
     }
     public void mealyBugsEating(int numMealyBugs){
         int numCucumbers = cucumbers.size();
+        if (numCucumbers == 0) {
+            return;
+        }
         for (int i = 0; i<numCucumbers; i++){
             Cucumber cucumber = (Cucumber) cucumbers.get(i);
             cucumber.setGrowthRate(cucumber.getGrowthRate()-(numMealyBugs*mealyBugs.get(0).getDestructionRate()));
@@ -262,6 +289,9 @@ public class garden {
     }
     public void thripsEating(int numThrips){
         int numTomatoes = tomatoes.size();
+        if (numTomatoes == 0) {
+            return;
+        }
         for (int i = 0; i<numTomatoes; i++){
             Tomato tomato = (Tomato) tomatoes.get(i);
             tomato.setGrowthRate(tomato.getGrowthRate()-(numThrips*thrips.get(0).getDestructionRate()));
@@ -269,6 +299,9 @@ public class garden {
     }
     public void antsEating(int numAnts){
         int numRoses = roses.size();
+        if (numRoses == 0) {
+            return;
+        }
         for (int i=0; i<numRoses; i++){
             Rose rose = (Rose) roses.get(i);
             rose.setGrowthRate(rose.getGrowthRate()-(numAnts*ants.get(0).getDestructionRate()));
@@ -447,8 +480,6 @@ public class garden {
         }
     }
 
-
-
     static int dayNum = 0;
     static int dayPerWeek = 0;
     static boolean isWeek=false;
@@ -456,3 +487,4 @@ public class garden {
     public int dayGetter() {
         return dayNum;
     }
+}

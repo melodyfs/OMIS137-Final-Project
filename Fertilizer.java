@@ -31,7 +31,7 @@ public class Fertilizer {
         }
 
         if (soil.nutrientLevel.getLevelValue() == nutrientLevel.getLevelValue()) {
-            logger.log("Current soil already has a nutrient level of " + nutrientLevel.name() + ". Consider upgrading the nutrient level of the fertilizer if necessary.")
+            logger.log("Current soil already has a nutrient level of " + nutrientLevel.name() + ". Consider upgrading the nutrient level of the fertilizer if necessary.");
             return;
         }
         
