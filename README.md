@@ -53,7 +53,7 @@ Rubbing alcohol bug spray kills mealybugs and thrips
 
 ### Classes
 - GardenSimulation
-  - `initUI`: 
+- Garden
 - Fertilizer 
 - Pesticide
 - Watering
