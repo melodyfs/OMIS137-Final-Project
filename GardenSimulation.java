@@ -206,7 +206,7 @@ class GardenSimulation extends JFrame {
         }
         for (int i = 0; i < garden.cucumbers.size(); i++) {
             Plant cucumber = garden.cucumbers.get(i);
-            addPlant("Cucmber " + String.valueOf(i).toString(), panel, cucumberIcon, cucumber);
+            addPlant("Cucumber " + String.valueOf(i).toString(), panel, cucumberIcon, cucumber);
         }
         for (int i = 0; i < garden.strawberries.size(); i++) {
             Plant strawberry = garden.strawberries.get(i);

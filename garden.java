@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Garden {
+    private static Logging logger = Logging.getInstance();
 
     ArrayList<Caterpillar> caterpillars = new ArrayList(); //create caterpillar ArrayList
     ArrayList<Ants> ants = new ArrayList();
@@ -30,6 +31,7 @@ public class Garden {
     void dayAdder() { //increment each day, and set isWeek to true if it has been a week
         dayNum++;
         dayPerWeek++;
+        logger.log("One day has passed.  It is now day " + dayNum);
         if (dayPerWeek ==7){
             isWeek=true;
             dayPerWeek = 0;
@@ -49,6 +51,7 @@ public class Garden {
                 case 7: whiteflyAdder(1); break;
             }
         }
+        logger.log(userChoice + " bugs have been created.");
     }
     
     public void initialPlantMaker(int userChoice){ //take how many plants the user wants and create that many plants, randomized 
@@ -63,6 +66,7 @@ public class Garden {
                 case 7: strawberryAdder(1); break;
             }
         }
+        logger.log(userChoice + " plants have been created.");
     }
     
     public void masterPlantReset(){ //this needs to be first when running, sets plant growth to original levels before bugs and presticides act on
@@ -98,6 +102,9 @@ public class Garden {
             thripAdder(halfThrips);
             int halfWhiteflies = whiteflies.size()/2;
             whiteflyAdder(halfWhiteflies);
+            logger.log("The bugs have bred.  There are now " + halfCaterpillars + " new caterpillars, " + halfAnts + " new ants, " +
+            halfAphids + " new aphids, " + halfMealyBugs + " new mealy bugs, " + halfMites + " new mites, " + halfThrips + 
+            " new thrips, " + halfWhiteflies + " new whiteflies."); 
         }
     }
 
@@ -130,6 +137,7 @@ public class Garden {
         if (numAnts > 0) {
             antsEating(numAnts);
         }
+        logger.log("The bugs have now eaten some of the plants.");
     }
     
     public void masterPesttoPlant(boolean hotPepperUsed, boolean insectSoapUsed, boolean rubAlcUsed){
@@ -157,6 +165,7 @@ public class Garden {
         growCucumbers(numCucumbers);
         int numStrawberries=strawberries.size();
         growStrawberries(numStrawberries);
+        logger.log("The plants have grown today");
     }
 
     public void masterBugKiller(boolean hotPepperUsed, boolean insectSoapUsed, boolean rubAlcUsed){
@@ -168,6 +177,7 @@ public class Garden {
         killMealyBugs(rubAlcUsed);
         killThrips(rubAlcUsed);
         killAnts(hotPepperUsed);
+        logger.log("The pesticides have been used on the bugs.  Half of each relevant bug have been killed");
     }
     
     public int randomNum(){ //random number generator of 1-7, used in making random bugs and plannts
