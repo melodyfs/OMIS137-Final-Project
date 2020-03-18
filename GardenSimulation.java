@@ -44,8 +44,10 @@ class GardenSimulation extends JFrame {
         var pesticideIcon = new ImageIcon("images/insecticide.png");
         var logIcon = new ImageIcon("images/log.png");
 
-        var startButton = new JButton(startIcon);
+        var startButton = new JButton("Start", startIcon);
         startButton.setToolTipText("Start our garden");
+        startButton.setHorizontalTextPosition(SwingConstants.CENTER);
+        startButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         startButton.setBorder(emptyBorder);
         startButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
@@ -66,9 +68,11 @@ class GardenSimulation extends JFrame {
             }
         });
 
-        var nextButton = new JButton(nextIcon);
+        var nextButton = new JButton("Next day", nextIcon);
         nextButton.setToolTipText("Go to next day");
         nextButton.setBorder(emptyBorder);
+        nextButton.setHorizontalTextPosition(SwingConstants.CENTER);
+        nextButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         nextButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,9 +93,11 @@ class GardenSimulation extends JFrame {
             }
         });
 
-        var waterButton = new JButton(waterIcon);
+        var waterButton = new JButton("Water", waterIcon);
         waterButton.setToolTipText("Water the plants");
         waterButton.setBorder(emptyBorder);
+        waterButton.setHorizontalTextPosition(SwingConstants.CENTER);
+        waterButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         waterButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,9 +109,11 @@ class GardenSimulation extends JFrame {
             }
         });
 
-        var pesticideButton = new JButton(pesticideIcon);
+        var pesticideButton = new JButton("Pesticide", pesticideIcon);
         pesticideButton.setToolTipText("Spread the pesticide");
         pesticideButton.setBorder(emptyBorder);
+        pesticideButton.setHorizontalTextPosition(SwingConstants.CENTER);
+        pesticideButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         pesticideButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,9 +137,11 @@ class GardenSimulation extends JFrame {
             }
         });
 
-        var viewLogButton = new JButton(logIcon);
+        var viewLogButton = new JButton("View Log", logIcon);
         viewLogButton.setToolTipText("See what happened in our garden");
         viewLogButton.setBorder(emptyBorder);
+        viewLogButton.setHorizontalTextPosition(SwingConstants.CENTER);
+        viewLogButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         viewLogButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,9 +151,11 @@ class GardenSimulation extends JFrame {
         });
 
         var exitIcon = new ImageIcon("images/exit.png");
-        var exitButton = new JButton(exitIcon);
+        var exitButton = new JButton("Exit", exitIcon);
         exitButton.setToolTipText("Exit our garden");
         exitButton.setBorder(emptyBorder);
+        exitButton.setHorizontalTextPosition(SwingConstants.CENTER);
+        exitButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         exitButton.addActionListener((event) -> System.exit(0));
 
         vertical.add(startButton);
