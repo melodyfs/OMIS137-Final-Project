@@ -7,35 +7,20 @@ Group members: Melody Yang, Connor Collins, Robert Mitchell
 ## Documentations
 ### Objects
 - Plant
-  - `name`:
-    - `String` type
-  - `species`
-    - `String` type
-- Bug
-  - `name`:
-    - `String` type
-    - To record the name of the bug
-  - `type`: 
-    - `BugType` type
-    - To record the type of the bug
+- Bug (BugType
 - BugType
   - `enum` type
 - Soil
-  - `nutrientLevel`
-    - `NutrientLevel` type
-    - Recod the level of nutrient in the soil
-  - `setNutrientLevel(NutrientLevel nutrientLevel)`
-    - Update `nutrientLevel`
-  - `getNutrientLevel()`
-    - To retrieve `nutrientLevel`
-- NutrientLevel
-  - `enum` type
+  - `nutrientLevel`(NutrientLevel): Recod the level of nutrient in the soil
+  - `setNutrientLevel(NutrientLevel nutrientLevel)`: Update `nutrientLevel`
+  - `getNutrientLevel()`: To retrieve `nutrientLevel`
+- NutrientLevel (enum)
   - Levels of nutrient are assigned an `int` value. 0 means the lowest level; 5 is the highest.
   
 
 ### Classes
-- Main
-- Growth
+- GardenSimulation
+  - `initUI`: 
 - Fertilizer 
 - Pesticide
 - Watering
