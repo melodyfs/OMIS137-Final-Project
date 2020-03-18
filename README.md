@@ -87,7 +87,6 @@ Group members: Melody Yang, Connor Collins, Robert Mitchell
 ### Classes
 
 - GardenSimulation
-  - `initUI`: 
 
 - Garden
     - `static int dayNum = 0;`: static initialization of dayNum 
