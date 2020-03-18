@@ -160,7 +160,6 @@ public class Garden {
     }
 
     public void masterBugKiller(boolean hotPepperUsed, boolean insectSoapUsed, boolean rubAlcUsed){
-
         killCaterpillars(insectSoapUsed);
         killAphids( insectSoapUsed);
         killMites(insectSoapUsed);
