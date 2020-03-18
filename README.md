@@ -2,7 +2,7 @@
 Group members: Melody Yang, Connor Collins, Robert Mitchell
 ## Usage
 - Compile all the modules by running `javac *.java`
-- Run the main program with `java Main`
+- Run the main program with `java GardenSimulation`
 
 ## Documentations
 ### Objects
