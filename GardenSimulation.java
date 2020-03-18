@@ -53,7 +53,7 @@ class GardenSimulation extends JFrame {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 String initialNumOfFlower = JOptionPane.showInputDialog(null,
-                                            "How many flowers do you want? Enter a number. ", null);
+                                            "How many plants do you want? Enter a number. ", null);
 
                 garden.initialPlantMaker(Integer.parseInt(initialNumOfFlower));
                 initPlants(panel);
